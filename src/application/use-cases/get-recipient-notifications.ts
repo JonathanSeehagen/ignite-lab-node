@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { NotificationsRepository } from '../repositories/notifications-repository';
 
 interface GetRecipientNotificationsRequest {
-  recipíentId: string;
+  recipientId: string;
 }
 
 interface GetRecipientNotificationsResponse {
@@ -17,10 +17,10 @@ export class GetRecipientNotifications {
   async execute(
     request: GetRecipientNotificationsRequest,
   ): Promise<GetRecipientNotificationsResponse> {
-    const { recipíentId } = request;
+    const { recipientId } = request;
 
     const notifications =
-      await this.notificationsRepository.findManyByRecipientId(recipíentId);
+      await this.notificationsRepository.findManyByRecipientId(recipientId);
 
     return {
       notifications,
